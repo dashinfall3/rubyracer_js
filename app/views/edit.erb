@@ -1,0 +1,14 @@
+<h2><%= @post.title %></h2>
+<p><%= @post.body %></p>
+
+<h2> Edit post <h2>
+<h3> Edit Blog Post </h3>
+<div class="new_post">
+  <form action="/post/<%=@post.id%>/edit" method="post">
+    <input type="text" name="post[title]" placeholder="<%=@post.title%>"><br>
+    <textarea rows=5 cols=30 name="post[body]" placeholder="<%=@post.body%>"> </textarea><br>
+    <input type="text" name="tags" placeholder="put in  your tags here"><br>
+    <input type="hidden" name="post[author_id]" value=1>
+    <input type="submit" name="submit" value="Post"><br>
+  </form>
+</div>

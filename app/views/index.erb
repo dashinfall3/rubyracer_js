@@ -1,0 +1,19 @@
+<h2> My blog</h2>
+<div class="container">
+
+<% @posts.each do |post| %>
+  <h3><a href="/post/<%=post.id%>"><%= post.title %></a></h3>
+  <div><%= post.body %></div>
+<% end %>
+
+<h3> New Blog Post </h3>
+<div class="new_post">
+  <form action="/post" method="post">
+    <input type="text" name="post[title]" placeholder="title"><br>
+    <textarea rows=5 cols=30 name="post[body]"></textarea><br>
+    <input type="text" name="tags" placeholder="tag1 tag 2: put in  your tags here separated by a space"><br>
+    <input type="hidden" name="post[author_id]" value=1>
+    <input type="submit" name="submit" value="Post"><br>
+  </form>
+</div>
+</div>
