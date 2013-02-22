@@ -5,6 +5,9 @@
   <h3><a href="/post/<%=post.id%>"><%= post.title %></a></h3>
   <div><%= post.body %></div>
 <% end %>
+<div class="digg_pagination" style="margin:20px 0 0 0;">
+    <%= will_paginate @posts, :container => false %>
+  </div>
 
 <h3> New Blog Post </h3>
 <div class="new_post">

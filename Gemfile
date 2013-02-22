@@ -15,6 +15,8 @@ gem 'activerecord'
 
 gem 'rake'
 
+gem 'will_paginate', '~> 3.0.0'
+
 group :test do
   gem 'faker'
   gem 'rspec'
