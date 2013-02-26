@@ -1,22 +1,10 @@
-<h2> My blog</h2>
-<div class="container">
-
-<% @posts.each do |post| %>
-  <h3><a href="/post/<%=post.id%>"><%= post.title %></a></h3>
-  <div><%= post.body %></div>
-<% end %>
-<div class="digg_pagination" style="margin:20px 0 0 0;">
-    <%= will_paginate @posts, :container => false %>
-  </div>
-
-<h3> New Blog Post </h3>
-<div class="new_post">
-  <form action="/post" method="post">
-    <input type="text" name="post[title]" placeholder="title"><br>
-    <textarea rows=5 cols=30 name="post[body]"></textarea><br>
-    <input type="text" name="tags" placeholder="tag1 tag 2: put in  your tags here separated by a space"><br>
-    <input type="hidden" name="post[author_id]" value=1>
-    <input type="submit" name="submit" value="Post"><br>
+<div class='container'>
+  <form name='players' action='/games' method='post'>
+    <%= @player1.errors.full_messages if @player1 && @player1.errors.any?%>
+    <%= @player2.errors.full_messages if @player2 && @player2.errors.any?%>
+    <div class='field'><input type='text' name='player1' placeholder='Input Player 1 username'/></div>
+    <div class='field'><input type='text' name='player2' placeholder='Input Player 2 username'/></div>
+    <div class='field'><input type='submit' value='Start game!'/></div>
   </form>
 </div>
-</div>
+

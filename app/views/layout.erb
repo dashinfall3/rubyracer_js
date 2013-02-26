@@ -7,12 +7,18 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/custom.css">
-  <link rel="stylesheet" href="/css/will_paginate.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+  <script src="/javascript/application.js"></script>
 
   <title></title>
 </head>
 <body>
-  <%= yield %>
+  <%= erb :_header %>
+  <div class="container">
+    <%= yield %>
+  </div>
+  <%= erb :_footer %>
 </body>
 </html>

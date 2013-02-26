@@ -1,0 +1,52 @@
+
+</head>
+<body>
+  <h1> Ruby Racer! <span id ="game_over"></span> </h1>
+  <div class="container">
+    <table class="racer_table">
+      <tr id="player1_strip">
+        <td class="active"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="player2_strip">
+        <td class="active" ></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+  <div id="reset">Reset</div>
+  <div class="results_container">
+    Congrats It's over!!!!
+    <div>Duration: <span id="duration"></span></div>
+    <div>Game ID: <span id="game_id"></span></div>
+    <div>The winner is: <span id="winner"></span></div>
+  </div>
+  <div id="wahoo" style="display: none"> <%=@game.id%></div>
+</body>
+

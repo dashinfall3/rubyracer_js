@@ -1,0 +1,36 @@
+body {
+  background-image: url('../images/light_wool/light_wool.png');
+}
+
+.header {
+  height: 5em;
+  background-color: #000;
+}
+
+.header a {
+  display: inline;
+  float: left;
+  text-decoration: none;
+}
+
+.header-title {
+  margin-left: 1em; 
+  font-size: 1em;
+  color: #fff;  
+  line-height: 5em;
+}
+
+.racer_table td {
+  background-color: white;
+  height: 50px;
+  width: 50px;
+  border: 1px solid #535353;
+}
+
+.racer_table td.active {
+  background-color: black;
+}
+
+.results_container {
+  display:none;
+}
