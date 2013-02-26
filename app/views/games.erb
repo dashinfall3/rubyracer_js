@@ -2,6 +2,7 @@
 </head>
 <body>
   <h1> Ruby Racer! <span id ="game_over"></span> </h1>
+  <% if @game.completed_at == nil %>
   <div class="container">
     <table class="racer_table">
       <tr id="player1_strip">
@@ -40,13 +41,34 @@
       </tr>
     </table>
   </div>
+
   <div id="reset">Reset</div>
-  <div class="results_container">
-    Congrats It's over!!!!
-    <div>Duration: <span id="duration"></span></div>
-    <div>Game ID: <span id="game_id"></span></div>
-    <div>The winner is: <span id="winner"></span></div>
-  </div>
-  <div id="wahoo" style="display: none"> <%=@game.id%></div>
+    <div class="results_container">
+      <div>Duration: <span id="duration"><%=@game.duration%></span></div>
+      <div>Game ID: <span id="game_id"><%=@game.id%></span></div>
+        <div>The winner is: <span id="winner">No winner yet!</span></div>
+    </div>
+    <div id="wahoo" style="display: none"> <%=@game.id%></div>
+    <div>Game results link: <a href="0.0.0.0:9292<%= request.fullpath %>">0.0.0.0:9292<%= request.fullpath %></a> </div>
+    <form action="/games" method="post">
+      <input type="hidden" name="previous_game" value="<%= @game.id %>"/>
+      <input type="submit" value='Play another game'/>
+    </form>
+  <% else %>
+    <div class="results_container">
+      Congrats It's over!!!!
+      <div>Duration: <span id="duration"><%=@game.duration%></span></div>
+      <div>Game ID: <span id="game_id"><%=@game.id%></span></div>
+      <div>The winner is: <span id="winner"><%=@game.winner.username%></span></div>
+      <div>Game results link: <a href="0.0.0.0:9292<%= request.fullpath %>">0.0.0.0:9292<%= request.fullpath %></a> </div>
+    
+    <div id="wahoo" style="display: none"> <%=@game.id%></div>
+    <form action="/games" method="post">
+      <input type="hidden" name="previous_game" value="<%= @game.id %>"/>
+      <input type="submit" value='Play another game'/>
+    </form>
+    </div>
+  <% end %>
+  <script>$('.results_container').show();</script>
 </body>
 

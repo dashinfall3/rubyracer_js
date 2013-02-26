@@ -22,7 +22,6 @@ $(document).ready(function() {
   function win_racer(player) {
     if ($('tr#player1_strip').find('.active').index() == 14) {
       $('#game_over').html("Game over. Play again! Player 1 wins!!!!")
-      debugger
       window.setTimeout(reset_racer,2000);
       game_over(player);
     }
@@ -39,10 +38,10 @@ $(document).ready(function() {
     var gameID = $('#wahoo').html();
     userInput = {"completed_at" : current_time, "winner_id": winner_id}
     $.post('/game_over/' + gameID, userInput, function(response){
-      $('.results_container').show();
       $('#game_id').html(response['game']['game']['id']);
       $('#duration').html(response['time']);
       $('#winner').html(response['winner']['user']['username']);
+      $('table.racer_table').hide();
     });
   }
 
