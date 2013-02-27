@@ -48,6 +48,7 @@ $(document).ready(function() {
   $('#reset').click(function() {
     reset_racer();
   }) ;
+
     
   $(document).on('keyup', function(event) {
     var key_pressed = String.fromCharCode(event.keyCode);
@@ -60,6 +61,6 @@ $(document).ready(function() {
     if (key_press2 != null ) {
       var position = $('tr#player2_strip').find('.active').index();
       update_player_position('player2', position+2)
-    } 
+    }  
   });
 });

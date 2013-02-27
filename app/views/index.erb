@@ -1,10 +1,51 @@
+<h1> Ruby Racer! <span id ="game_over"></span> </h1>
 <div class='container'>
-  <form name='players' action='/games' method='post'>
+  <form id="player_form" name='players' action='/games' method='post'>
     <%= @player1.errors.full_messages if @player1 && @player1.errors.any?%>
     <%= @player2.errors.full_messages if @player2 && @player2.errors.any?%>
-    <div class='field'><input type='text' name='player1' placeholder='Input Player 1 username'/></div>
-    <div class='field'><input type='text' name='player2' placeholder='Input Player 2 username'/></div>
+    <div class='field'><input type='text' id="player1_name" name='player1' placeholder='Player 1 initials'/></div>
+    <div class='field'><input type='text' name='player2' id="player2_name" placeholder='Player 2 initials'/></div>
     <div class='field'><input type='submit' value='Start game!'/></div>
   </form>
 </div>
 
+<table class="racer_table">
+  <tr id="player1_strip">
+    <td class="active"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr id="player2_strip">
+    <td class="active" ></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<div class="comments" id="winner"></div>
+<div class="comments" id="duration"></div>
+<div class="comments" id="game_id"></div>
